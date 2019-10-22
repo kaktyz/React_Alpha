@@ -1,8 +1,9 @@
 import React from 'react';
 import News from '../news/news.jsx';
+import '../styles/app_style.css'
 
 
-let inputNewsTitle;
+
 class App extends React.Component{
     
 
@@ -24,17 +25,26 @@ class App extends React.Component{
                 }
             ]
         }
+
+        this.inputNewsTitle = null;
+        this.inputNewsDescr = null
+
     }  
+//TODO: Исправить некорректную работу второго инпута
 
     render(){
         return(
-            <div>
+            <div className={'mainConteiner'}>
                 
-                <input type="text" ref={ (input) => {this.inputNewsTitle = input;} }/>
-                <button onClick={ () => this.handleClick()}>
-                    Добавить новость
-                </button>
-                <h1>Hi all, it`s news!</h1>
+                <div className={'AddNews_inputButton'}>
+                    
+                    <input type="text" ref={ (input) => {this.inputNewsTitle = input;} }/>
+                    <input type="text" ref={ (input) => {this.inputNewsDescr = input;} }/>
+                    <button className={'inputButton'} onClick={ () => this.handleClick()}>
+                        Добавить новость
+                    </button>
+                </div>
+                <h1 className={'hiwords'}>Hi all, it`s news!</h1>
                 <News items={ this.state.items }/>
             </div>
         );
@@ -45,7 +55,7 @@ class App extends React.Component{
         let {items} = this.state;
         items.push({
             title: this.inputNewsTitle.value,
-            descr: 'more derscr'
+            descr: this.inputNewsDescr
         });
 
         this.inputNewsTitle.value='';

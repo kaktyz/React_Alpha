@@ -1,5 +1,7 @@
 import React from 'react';
 
+import '../styles/news_style.css';
+
 
 class News extends React.Component{
 
@@ -20,7 +22,7 @@ class News extends React.Component{
 
     renderContent(){
 
-       return( <div>
+       return( <div className={'all_news'}>
             {this.renderNews()}
         </div>)
     }
@@ -28,23 +30,23 @@ class News extends React.Component{
     renderNews(){
         return this.props.items.map((item, index)=>{
             return(
-                <div className={'news'} key={index}>
+                    <div className={'news'} key={index}>
                     
-                    <h2 className={'news__title'}>
-                        {item.title}
-                    </h2>
-                    
-                    <div className={'news__descr'}>
-                        {item.descr}
+                        <h2 className={'news__title'}>
+                            {item.title}
+                        </h2>
+                        
+                        <div className={'news__descr'}>
+                            {item.descr}
+                        </div>
+
+                        <a href="#" onClick={ (e) => this.handleClick(e) }>
+                            {this.state.visible ? 'Cкрыть' : 'Подробнее'}
+                        </a>
+
+                        {this.state.visible ? <div className={ 'news__full_descr'}>Полное описание.</div> : null}
+
                     </div>
-
-                    <a href="#" onClick={ (e) => this.handleClick(e) }>
-                        {this.state.visible ? 'Cкрыть' : 'Подробнее'}
-                    </a>
-
-                    {this.state.visible ? <div className={ 'news__full_descr'}>Полное описание.</div> : null}
-
-                </div>
             );
         });
     }

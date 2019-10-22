@@ -1,0 +1,12 @@
+.all_news{
+margin-top: 20px;
+}
+.news{
+    margin-top: 20px;
+}
+.news__title{
+    padding: 10px;
+}
+.news__descr{
+    padding: 10px;
+}

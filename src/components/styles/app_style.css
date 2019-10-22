@@ -1,0 +1,17 @@
+.mainConteiner{
+    text-align: center;
+    width: 60%;
+    padding-top: 20px;
+}
+.AddNews_inputButton{
+    display: flex;
+    flex-direction: column;
+    padding-top: 20px;
+    padding-bottom: 20px;;
+}
+.inputButton{
+    /* margin-top: 10px; */
+}
+.hiwords{
+    padding: 20px;
+}
