@@ -30,6 +30,7 @@ class App extends React.Component{
         this.inputNewsDescr = null
 
     }  
+    
 //TODO: Исправить некорректную работу второго инпута
 
     render(){
