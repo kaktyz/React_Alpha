@@ -45,7 +45,7 @@ class News extends React.Component{
                         </a>
 
                         {this.state.visible ? <div className={ 'news__full_descr'}>Полное описание.</div> : null}
-
+                        
                     </div>
             );
         });

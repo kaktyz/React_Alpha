@@ -1,11 +1,16 @@
 import React from 'react';
 import News from '../news/news.jsx';
-import '../styles/app_style.css'
+import '../styles/app_style.css';
+import {connect} from 'react-redux';
 
+function mapStateToProps(state) {
+    return{
+        user: state.user
+    };
+}
 
 
 class App extends React.Component{
-    
 
     constructor(props){
         super(props);
@@ -30,8 +35,6 @@ class App extends React.Component{
         this.inputNewsDescr = null
 
     }  
-    
-//TODO: Исправить некорректную работу второго инпута
 
     render(){
         return(
@@ -50,6 +53,7 @@ class App extends React.Component{
             </div>
         );
     }
+    
     handleClick(){
         console.log();
 
@@ -67,4 +71,4 @@ class App extends React.Component{
     }
 }
 
-export default App;
+export default connect(mapStateToProps)(App);
